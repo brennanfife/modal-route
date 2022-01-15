@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { data } from '../../components/Grid'
+import { data } from '../'
 import {
   Flex,
   Modal,
@@ -9,6 +9,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react'
+import SEO from '../../components/SEO'
 
 export default function BrowsePage({ world }) {
   const { prefetch, push, pathname } = useRouter()
@@ -19,6 +20,7 @@ export default function BrowsePage({ world }) {
 
   return (
     <>
+      <SEO title={world} />
       <Modal isOpen={true} onClose={() => push('/')}>
         <ModalOverlay />
         <ModalContent>
