@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import Post from '../components/Post'
 import Grid from '../components/Grid'
 
 import {
@@ -8,6 +7,7 @@ import {
   ModalContent,
   ModalBody,
   ModalCloseButton,
+  Flex,
 } from '@chakra-ui/react'
 
 const Index = () => {
@@ -20,7 +20,15 @@ const Index = () => {
         <ModalContent>
           <ModalCloseButton />
           <ModalBody>
-            <Post id={query.postId} pathname={pathname} />
+            <Flex
+              w="100%"
+              h="100%"
+              bgColor="darkcyan"
+              alignItems="center"
+              justifyContent="center"
+            >
+              I am the post {query.postId}; my pathname is: {pathname}
+            </Flex>
           </ModalBody>
         </ModalContent>
       </Modal>
