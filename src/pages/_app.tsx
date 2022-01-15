@@ -1,10 +1,12 @@
-import styles from '../app-styles.module.css'
+import { ChakraProvider, Flex } from '@chakra-ui/react'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className={styles.content}>
-      <Component {...pageProps} />
-    </div>
+    <Flex justifyContent="center" alignItems="center">
+      <ChakraProvider>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </Flex>
   )
 }
 
