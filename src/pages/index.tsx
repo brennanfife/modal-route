@@ -1,21 +1,28 @@
 import { useRouter } from 'next/router'
-import Modal from 'react-modal'
 import Post from '../components/Post'
 import Grid from '../components/Grid'
 
-Modal.setAppElement('#__next')
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  ModalCloseButton,
+} from '@chakra-ui/react'
 
 const Index = () => {
   const router = useRouter()
 
   return (
     <>
-      <Modal
-        isOpen={!!router.query.postId}
-        onRequestClose={() => router.push('/')}
-        contentLabel="Post modal"
-      >
-        <Post id={router.query.postId} pathname={router.pathname} />
+      <Modal isOpen={!!router.query.postId} onClose={() => router.push('/')}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+          <ModalBody>
+            <Post id={router.query.postId} pathname={router.pathname} />
+          </ModalBody>
+        </ModalContent>
       </Modal>
       <Grid />
     </>
