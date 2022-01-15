@@ -6,7 +6,6 @@ export const data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 export default function PostCardGrid() {
   return (
     <Flex direction="column">
-      <h2>With Dynamic Routing, and reloads will keep the modal</h2>
       <div
         style={{
           display: 'inline-grid',
@@ -16,7 +15,7 @@ export default function PostCardGrid() {
         }}
       >
         {data.map((id, index) => (
-          <Link key={index} href="/article/[articleId]" as={`/article/${id}`}>
+          <Link key={index} href="/browse/[world]" as={`/browse/${id}`}>
             <Flex
               w="150px"
               h="150px"

@@ -11,16 +11,16 @@ import {
 } from '@chakra-ui/react'
 
 const Index = () => {
-  const router = useRouter()
+  const { query, push, pathname } = useRouter()
 
   return (
     <>
-      <Modal isOpen={!!router.query.postId} onClose={() => router.push('/')}>
+      <Modal isOpen={!!query.postId} onClose={() => push('/browse')}>
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
           <ModalBody>
-            <Post id={router.query.postId} pathname={router.pathname} />
+            <Post id={query.postId} pathname={pathname} />
           </ModalBody>
         </ModalContent>
       </Modal>
