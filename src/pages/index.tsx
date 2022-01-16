@@ -1,9 +1,12 @@
-import Grid from '../components/Grid'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-export default function Index() {
-  return (
-    <>
-      <Grid />
-    </>
-  )
+export default function Redirect(): null {
+  const { replace } = useRouter();
+
+  useEffect(() => {
+    replace("/browse");
+  }, []);
+
+  return null;
 }
