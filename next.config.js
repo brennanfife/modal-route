@@ -5,10 +5,10 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/browse',
-        destination: '/browse/1',
+        source: "/browse",
+        destination: "/browse/decentraland",
         permanent: true,
       },
-    ]
+    ];
   },
-}
+};

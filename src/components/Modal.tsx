@@ -5,17 +5,19 @@ import {
   ModalContent,
   ModalBody,
   ModalCloseButton,
-} from '@chakra-ui/react'
-import { useRouter } from 'next/router'
+  ModalHeader,
+} from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 export default function ModalComponent({ world }) {
-  const { push, pathname } = useRouter()
+  const { push } = useRouter();
 
   return (
-    <Modal isOpen={true} onClose={() => push('/')}>
+    <Modal isOpen={true} onClose={() => push("/")}>
       <ModalOverlay />
       <ModalContent>
         <ModalCloseButton />
+        <ModalHeader>{world}</ModalHeader>
         <ModalBody>
           <Flex
             w="100%"
@@ -24,10 +26,10 @@ export default function ModalComponent({ world }) {
             alignItems="center"
             justifyContent="center"
           >
-            I am the world {world}; my pathname is: {pathname}
+            I am the world {world}
           </Flex>
         </ModalBody>
       </ModalContent>
     </Modal>
-  )
+  );
 }
